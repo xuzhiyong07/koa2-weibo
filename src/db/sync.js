@@ -3,9 +3,9 @@
  * @author xuzhiy
  */
 
-const seq = require('./sqe')
+const seq = require('./seq')
 
-// require('./model')
+require('./model/index')
 
 // 测试链接
 seq.authenticate().then(() => {
