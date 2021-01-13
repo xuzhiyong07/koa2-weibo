@@ -13,6 +13,7 @@ const { REDIS_CONF } = require('./conf/db')
 // 路由
 const index = require('./routes/index')
 const userViewRouter = require('./routes/view/user')
+const userApiRouter = require('./routes/api/user')
 const errorViewRouter = require('./routes/view/error')
 
 // error handler
@@ -63,6 +64,7 @@ app.use(async (ctx, next) => {
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(userViewRouter.routes(), userViewRouter.allowedMethods())
+app.use(userApiRouter.routes(), userApiRouter.allowedMethods())
 app.use(errorViewRouter.routes(), errorViewRouter.allowedMethods()) // 404路由一定要注册到最下面
 
 // error-handling
